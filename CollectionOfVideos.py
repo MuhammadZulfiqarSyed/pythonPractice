@@ -1,25 +1,31 @@
 import numpy as np
 
-Video = []
-Results = []
+Video = [["","","",""] for _ in range(10000)]
+Results = [["","","",""] for _ in range(20)]
+n=0
+# a=[1,2,3]
+# a[2]=4
+# print(a)
 
-
-def add_vid():
+def add_vid(n):
     while True:
-        restart = False
+        # restart = False
         VidTitle = input("What is the video title: ")
         if VidTitle == "":
             print("Incorrect input. Please try again.")
             continue
-        for i in range(len(Video)):
-            repeats = Video[i][0].count(VidTitle)
-            if repeats == 20:
-                restart = True
-                print("Too many of the same title added (max 20). Please try again.")
-            break
-        if restart:
-            continue
-        break
+        break 
+        
+        # for i in range(len(Video)):
+        #     repeats = Video[i][0].count(VidTitle)
+        #     if repeats == 20:
+        #         restart = True
+        #         print("Too many of the same title added (max 20). Please try again.")
+        #     break
+        
+        # if restart:
+        #     continue
+        # break
 
     while True:
         VidFormat = input(
@@ -53,7 +59,9 @@ def add_vid():
             continue
         break
 
-    Video.append([VidTitle, VidFormat, VidRelease, VidStorage])
+    # Video.append([VidTitle, VidFormat, VidRelease, VidStorage])
+    Video[n]=[VidTitle, VidFormat, VidRelease, VidStorage]
+    n=n+1
 
 
 def find_vid(Results):
@@ -79,16 +87,16 @@ while True:
         "Do you want to add a new video to the library (a), search for an existing video by title (b), or stop the program (c). Pick (a/b/c): "
     ).lower()
     if choice == "a":
-        if len(Video) == 10000:
+        if n == 9999:
             print(
                 "too many videos added (max 10,000 videos), please pick another option"
             )
         else:
-            add_vid()
+            add_vid(n)
     elif choice == "b":
         find_vid(Results)
     elif choice == "c":
-        print("stoping program")
+        print("stopping program")
         break
     else:
         print("Incorrect input. Please try again.")
