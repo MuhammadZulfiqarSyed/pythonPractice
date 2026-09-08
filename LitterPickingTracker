@@ -1,0 +1,69 @@
+PickerName = [f"picker {pn + 1}" for pn in range(30)]  # adds pickers 1-30
+PickedWeight = []
+PickerCertificate = []
+
+# uncomment the code below if you want to input picker names yourself
+# PickerName.clear() #clears all picker names from before
+# for i in range(30): #repeats for each picker
+#     while True: #starts a loop
+#         name = input(f"enter picker {i + 1}'s name: ") #asks for picker names
+#         if name == "": #checks if user input a name
+#             print("Please input a name. Try again") #asks user to try again if no name is input
+#             continue #restarts loop
+#         PickerName.append(name) #adds picker name to list
+#         break #exits loop
+
+
+for i in range(30):  # repeats for each picker
+    while True:  # starts loop
+        WeightOfPicked = input(
+            f"Enter the weight (in KG) of litter picker {i+1} has picked: "  # asks for weight of litter picked
+        )
+        print(isinstance(WeightOfPicked, float))
+        if isinstance(
+            WeightOfPicked, float
+        ):  # checks if number input is a float number
+            WeightOfPicked = float(WeightOfPicked)  # makes it a float
+            WeightOfPicked = round(WeightOfPicked, 1)  # rounds it to 1 decimal place
+            PickedWeight.append(WeightOfPicked)  # adds it to the list
+            break  # exits loop
+        print(
+            "Please input a number. Try again"
+        )  # asks user to try again if incorrect value is entered
+
+# Bubble sort
+n = len(PickedWeight)  # assigns list length to name
+for i in range(n - 1):  # repeats list lebgth - 1 times
+    for j in range(n - i - 1):  # repeats list length - i - 1 times
+        if (
+            PickedWeight[j] > PickedWeight[j + 1]
+        ):  # if before value is greater than after value
+            PickedWeight[j], PickedWeight[j + 1] = (
+                PickedWeight[j + 1],
+                PickedWeight[j],
+            )  # value switch
+            PickerName[j], PickerName[j + 1] = (
+                PickerName[j + 1],
+                PickerName[j],
+            )  # value switch
+
+PickerName.reverse()  # reverses list
+PickedWeight.reverse()  # reverses list
+
+
+for i in range(30):  # repeats for each picker
+    if PickedWeight[i] >= 100:  # checks if items picked is 100 or above
+        PickerCertificate.append(
+            PickerName[i]
+        )  # adds name to gold award list if 100 or above
+
+
+print(
+    f"The Best in Group is {PickerName[0]} with {PickedWeight[0]} items picked!"  # outputs first place
+)
+print(
+    f"The Second best in Group is {PickerName[1]} with {PickedWeight[1]} items picked!"  # outputs second place
+)
+print(
+    f"{len(PickerCertificate)} Picker Certificates must be printed"
+)  # outputs how many gold certificates to be printed
