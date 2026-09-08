@@ -29,21 +29,23 @@ for i in range(30):  # repeats for each student
         )  # asks user to try again if incorrect value is entered
 
 # Bubble sort
-# a full pass
-# "MISTAKE IN LINE 9, what is it?"
-# implement, swapping a parallel array
-n = len(ItemsRecycled)
-for i in range(n - 1):
-    for j in range(n - i - 1):
-        if ItemsRecycled[j] > ItemsRecycled[j + 1]:
+n = len(ItemsRecycled)  # assigns list length to name
+for i in range(n - 1):  # repeats list lebgth - 1 times
+    for j in range(n - i - 1):  # repeats list length - i - 1 times
+        if (
+            ItemsRecycled[j] > ItemsRecycled[j + 1]
+        ):  # if before value is greater than after value
             ItemsRecycled[j], ItemsRecycled[j + 1] = (
                 ItemsRecycled[j + 1],
                 ItemsRecycled[j],
-            )
-            StudentName[j], StudentName[j + 1] = StudentName[j + 1], StudentName[j]
+            )  # value switch
+            StudentName[j], StudentName[j + 1] = (
+                StudentName[j + 1],
+                StudentName[j],
+            )  # value switch
 
-StudentName.reverse()
-ItemsRecycled.reverse()
+StudentName.reverse()  # reverses list
+ItemsRecycled.reverse()  # reverses list
 
 
 for i in range(30):  # repeats for each student
