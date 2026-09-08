@@ -19,11 +19,10 @@ for i in range(30):  # repeats for each picker
         WeightOfPicked = input(
             f"Enter the weight (in KG) of litter picker {i+1} has picked: "  # asks for weight of litter picked
         )
-        print(isinstance(WeightOfPicked, float))
-        if isinstance(
-            WeightOfPicked, float
-        ):  # checks if number input is a float number
-            WeightOfPicked = float(WeightOfPicked)  # makes it a float
+        if (
+            WeightOfPicked.count(".") == 1 and WeightOfPicked.replace(".", "").isdigit()
+        ) or WeightOfPicked.isdigit():  # checks if it is a float or int
+            WeightOfPicked = float(WeightOfPicked)
             WeightOfPicked = round(WeightOfPicked, 1)  # rounds it to 1 decimal place
             PickedWeight.append(WeightOfPicked)  # adds it to the list
             break  # exits loop
@@ -52,7 +51,7 @@ PickedWeight.reverse()  # reverses list
 
 
 for i in range(30):  # repeats for each picker
-    if PickedWeight[i] >= 100:  # checks if items picked is 100 or above
+    if PickedWeight[i] >= 3:  # checks if items picked is 100 or above
         PickerCertificate.append(
             PickerName[i]
         )  # adds name to gold award list if 100 or above
