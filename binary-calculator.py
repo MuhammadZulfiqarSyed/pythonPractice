@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def run_calculator():
     num1 = take_input("First")
     operand1 = num1
@@ -145,7 +144,8 @@ while True:
         break
     else:
         print("invalid input, try again")
-=======
+
+
 def run_calculator():
     num1 = take_input("First")
     operand1 = num1
@@ -292,4 +292,3 @@ while True:
         break
     else:
         print("invalid input, try again")
->>>>>>> 791c127e64287aa1ad0e890be8391c3a7404820b

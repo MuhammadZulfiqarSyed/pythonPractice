@@ -1,12 +1,12 @@
-<<<<<<< HEAD
 import numpy as np
 
-Video = [["","","",""] for _ in range(10000)]
-Results = [["","","",""] for _ in range(20)]
-n=0
+Video = [["", "", "", ""] for _ in range(10000)]
+Results = [["", "", "", ""] for _ in range(20)]
+n = 0
 # a=[1,2,3]
 # a[2]=4
 # print(a)
+
 
 def add_vid(n):
     while True:
@@ -15,15 +15,15 @@ def add_vid(n):
         if VidTitle == "":
             print("Incorrect input. Please try again.")
             continue
-        break 
-        
+        break
+
         # for i in range(len(Video)):
         #     repeats = Video[i][0].count(VidTitle)
         #     if repeats == 20:
         #         restart = True
         #         print("Too many of the same title added (max 20). Please try again.")
         #     break
-        
+
         # if restart:
         #     continue
         # break
@@ -61,8 +61,8 @@ def add_vid(n):
         break
 
     # Video.append([VidTitle, VidFormat, VidRelease, VidStorage])
-    Video[n]=[VidTitle, VidFormat, VidRelease, VidStorage]
-    n=n+1
+    Video[n] = [VidTitle, VidFormat, VidRelease, VidStorage]
+    n = n + 1
 
 
 def find_vid(Results):
@@ -101,7 +101,7 @@ while True:
         break
     else:
         print("Incorrect input. Please try again.")
-=======
+
 import numpy as np
 
 Video = [["", "", "", ""] for _ in range(10000)]
@@ -207,4 +207,3 @@ while True:
         break
     else:
         print("Incorrect input. Please try again.")
->>>>>>> 791c127e64287aa1ad0e890be8391c3a7404820b
