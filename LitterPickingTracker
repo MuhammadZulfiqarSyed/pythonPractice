@@ -32,19 +32,31 @@ for i in range(30):  # repeats for each picker
 
 # Bubble sort
 n = len(PickedWeight)  # assigns list length to name
-for i in range(n - 1):  # repeats list lebgth - 1 times
+for i in range(n - 1):  # repeats list length - 1 times
     for j in range(n - i - 1):  # repeats list length - i - 1 times
-        if (
-            PickedWeight[j] > PickedWeight[j + 1]
-        ):  # if before value is greater than after value
-            PickedWeight[j], PickedWeight[j + 1] = (
-                PickedWeight[j + 1],
-                PickedWeight[j],
-            )  # value switch
-            PickerName[j], PickerName[j + 1] = (
-                PickerName[j + 1],
-                PickerName[j],
-            )  # value switch
+        if (PickedWeight[j] > PickedWeight[j + 1]):  # if before value is greater than after value
+            PickedWeight[j], PickedWeight[j + 1] = (PickedWeight[j + 1], PickedWeight[j],)  # value switch
+            PickerName[j], PickerName[j + 1] = (PickerName[j + 1],PickerName[j],)  # value switch
+
+
+# Bubble sort
+scores=[5,9,4,3,2,6,1]
+
+swap=True
+while swap:
+    swap=False
+    #a full pass
+    #"MISTAKE IN LINE 9, what is it?"
+    #implement, swapping a parallel array
+    for i in range(len(scores)):
+        #is there a swap?
+        if scores[i]>scores[i+1]:
+            #swap
+            temp=scores[i]
+            scores[i]=scores[i+1]
+            scores[i+1]=scores[i]
+            swap=True
+
 
 PickerName.reverse()  # reverses list
 PickedWeight.reverse()  # reverses list
